@@ -1,0 +1,1 @@
+[{"className":"SumOfArrayTest","methodName":"checkTheSum","pointNames":["03-20"],"message":"timeout","status":"FAILED"}]

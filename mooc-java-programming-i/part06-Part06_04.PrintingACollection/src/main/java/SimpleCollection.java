@@ -19,4 +19,23 @@ public class SimpleCollection {
         return this.elements;
     }
     
+    @Override
+    public String toString() {
+        if (elements.isEmpty()) {
+            return "The collection " + name + " is empty.";
+        }
+        
+        
+        if (elements.size() == 1) {
+            return "The collection " + name + " has 1 element:\n" + this.elements.get(0); 
+        }
+        
+        String elementsAsString = "";
+        
+        for (String element: elements) {
+            elementsAsString += "\n" + element;
+        }
+        
+        return "The collection " + name + " has " + elements.size() + " elements:" + elementsAsString;
+    }
 }

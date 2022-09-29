@@ -50,5 +50,65 @@ public class SimpleDate {
 
         return this.year - other.year - yearRemoved;
     }
+    
+//    @Override
+//    public boolean equals(Object object) {
+//        if (this == object) {
+//            return true; 
+//        }
+//        
+//        if (!(object instanceof SimpleDate)) {
+//            return false;
+//        }
+//        
+//        SimpleDate comparedDate = (SimpleDate) object;
+//        
+//        if (this.day == comparedDate.day 
+//                && this.month == comparedDate.month
+//                && this.year == comparedDate.year) {
+//            return true;
+//        }
+//        
+//        return false;
+//    }
+//    
+//    public int hashCode() {
+//        return (this.day + this.month + this.year + "").hashCode();
+//    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 19 * hash + this.day;
+        hash = 19 * hash + this.month;
+        hash = 19 * hash + this.year;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final SimpleDate other = (SimpleDate) obj;
+        if (this.day != other.day) {
+            return false;
+        }
+        if (this.month != other.month) {
+            return false;
+        }
+        if (this.year != other.year) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 
 }
